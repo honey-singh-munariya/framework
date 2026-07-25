@@ -1,10 +1,13 @@
 # Importing the modules and framework
 
 from flask import Flask, render_template, request
-
+import os
 # inteacting 
-
 web = Flask(__name__)
+
+
+pic_folder = os.path.join('static')
+web.config['UPLOAD_FOLDER'] = pic_folder
 
 # mapping
 
@@ -13,7 +16,8 @@ web = Flask(__name__)
 
 # Inputs
 def homepage():
-    return render_template("register.html")
+    pic = os.path.join(web.config['UPLOAD_FOLDER'],'s8hIt7qZOPR1gKtZzfAneEEr8pb.webp')
+    return render_template("register.html",user_image = pic)
 
 # mapping the web
 @web.route('/confirm', methods = ['POST','GET'])
