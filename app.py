@@ -25,14 +25,13 @@ def homepage():
 # Taking the inputs
 
 def confirm():
-    if request.method == "POST":
+    if request.methods == "POST":
         n = request.form.get("name")
         c = request.form.get("city")
         p = request.form.get("Phone_number")
 
         return render_template("confirm.html", name = n, city = c, phone_number = p)
-
-
+    
 # Main
 if __name__ == "__main__":
     web.run(debug=True)
