@@ -28,7 +28,7 @@ def confirm():
     if request.methods == "POST":
         n = request.form.get("name")
         c = request.form.get("city")
-        p = request.form.get("Phone_number")
+        p = request.form.get("Phone_numbe  r")
 
         return render_template("confirm.html", name = n, city = c, phone_number = p)
     
